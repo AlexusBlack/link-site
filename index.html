@@ -1,6 +1,9 @@
 <html>
-  <title>Link-Site Prototype</title>
-  <link rel="icon" type="image/svg" href='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHJ4PSI2IiBmaWxsPSIjQ0MwMDAwIi8+PHBhdGggZD0iTTI0LjM2MDggMjJDMjUuNDY1IDIxLjc4MjcgMjYuNDQ2NCAyMS4xNzU2IDI3LjExNDcgMjAuMjk2NkMyNy43ODI5IDE5LjQxNzUgMjguMDkwMiAxOC4zMjkyIDI3Ljk3NyAxNy4yNDI5QzI3Ljg2MzggMTYuMTU2NiAyNy4zMzggMTUuMTQ5OCAyNi41MDE5IDE0LjQxOEMyNS42NjU4IDEzLjY4NjIgMjQuNTc4OSAxMy4yODE2IDIzLjQ1MjIgMTMuMjgyNkgyMi4zMDczQzIyLjAwNjMgMTIuMTUzMiAyMS40MjA1IDExLjExMzkgMjAuNjAyNiAxMC4yNThDMTkuNzg0NyA5LjQwMjA5IDE4Ljc2MDMgOC43NTY0MyAxNy42MjEzIDguMzc4OTdDMTYuNDgyMyA4LjAwMTUxIDE1LjI2NDQgNy45MDQwNyAxNC4wNzY5IDguMDk1MzlDMTIuODg5NSA4LjI4NjcxIDExLjc2OTcgOC43NjA4IDEwLjgxOCA5LjQ3NTExQzkuODY2MjkgMTAuMTg5NCA5LjExMjU2IDExLjEyMTYgOC42MjQ0NCAxMi4xODc5QzguMTM2MzMgMTMuMjU0MiA3LjkyOTExIDE0LjQyMTMgOC4wMjEzOSAxNS41ODQ0QzguMTEzNjggMTYuNzQ3NSA4LjUwMjU4IDE3Ljg3MDEgOS4xNTMxNyAxOC44NTE2QzkuODAzNzcgMTkuODMzMSAxMC42OTU3IDIwLjY0MjYgMTEuNzQ4OSAyMS4yMDc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xOSAxN0wxNSAyMi41SDIxTDE3IDI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='>
+  <head>
+    <title>Link-Site Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHJ4PSI2IiBmaWxsPSIjQ0MwMDAwIi8+PHBhdGggZD0iTTI0LjM2MDggMjJDMjUuNDY1IDIxLjc4MjcgMjYuNDQ2NCAyMS4xNzU2IDI3LjExNDcgMjAuMjk2NkMyNy43ODI5IDE5LjQxNzUgMjguMDkwMiAxOC4zMjkyIDI3Ljk3NyAxNy4yNDI5QzI3Ljg2MzggMTYuMTU2NiAyNy4zMzggMTUuMTQ5OCAyNi41MDE5IDE0LjQxOEMyNS42NjU4IDEzLjY4NjIgMjQuNTc4OSAxMy4yODE2IDIzLjQ1MjIgMTMuMjgyNkgyMi4zMDczQzIyLjAwNjMgMTIuMTUzMiAyMS40MjA1IDExLjExMzkgMjAuNjAyNiAxMC4yNThDMTkuNzg0NyA5LjQwMjA5IDE4Ljc2MDMgOC43NTY0MyAxNy42MjEzIDguMzc4OTdDMTYuNDgyMyA4LjAwMTUxIDE1LjI2NDQgNy45MDQwNyAxNC4wNzY5IDguMDk1MzlDMTIuODg5NSA4LjI4NjcxIDExLjc2OTcgOC43NjA4IDEwLjgxOCA5LjQ3NTExQzkuODY2MjkgMTAuMTg5NCA5LjExMjU2IDExLjEyMTYgOC42MjQ0NCAxMi4xODc5QzguMTM2MzMgMTMuMjU0MiA3LjkyOTExIDE0LjQyMTMgOC4wMjEzOSAxNS41ODQ0QzguMTEzNjggMTYuNzQ3NSA4LjUwMjU4IDE3Ljg3MDEgOS4xNTMxNyAxOC44NTE2QzkuODAzNzcgMTkuODMzMSAxMC42OTU3IDIwLjY0MjYgMTEuNzQ4OSAyMS4yMDc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xOSAxN0wxNSAyMi41SDIxTDE3IDI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='>
+  </head>
 
   <div class="wrapper">
     <header class="header">
@@ -11,7 +14,7 @@
         </a>
         <nav class="header__menu">
           <a class="header__menu-item link-site__link" href="#main">Home</a>
-          <a class="header__menu-item link-site__link" href="#creation">Create Link-Site</a>
+          <a class="header__menu-item link-site__link" href="#creation">Creation</a>
           <a class="header__menu-item link-site__link" href="#best-practices">Best Practices</a>
         </nav>
       </div>
@@ -80,7 +83,7 @@
           </div>
 
           <div class="grid__col" style="--cols: 6">
-            <svg width="382" height="303" viewBox="0 0 382 303" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="infographics" width="382" height="303" viewBox="0 0 382 303" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M206 42V38C206 35.8783 205.157 33.8434 203.657 32.3431C202.157 30.8429 200.122 30 198 30H182C179.878 30 177.843 30.8429 176.343 32.3431C174.843 33.8434 174 35.8783 174 38V42" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M190 22C194.418 22 198 18.4183 198 14C198 9.58172 194.418 6 190 6C185.582 6 182 9.58172 182 14C182 18.4183 185.582 22 190 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M188 153.458C188.859 154.583 189.955 155.513 191.213 156.186C192.471 156.859 193.863 157.26 195.293 157.36C196.724 157.46 198.159 157.258 199.503 156.768C200.846 156.277 202.066 155.509 203.08 154.516L209.08 148.641C210.902 146.794 211.91 144.321 211.887 141.753C211.864 139.186 210.812 136.73 208.958 134.915C207.104 133.099 204.596 132.07 201.974 132.047C199.352 132.025 196.826 133.012 194.94 134.796L191.5 138.144" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -166,6 +169,12 @@ a {
   padding: 30px 0;
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --padding-width: 20px;
+  }
+}
+
 /* Paging system */
 .page--subpage.page--active ~ .page--main,
 .page--subpage:not(.page--active) {
@@ -184,6 +193,12 @@ a {
 .grid__col {
   --cols: 1;
   grid-column-end: span var(--cols);
+}
+
+@media (max-width: 1024px) {
+  .grid__col {
+    grid-column-end: span 12;
+  }
 }
 
 /* Buttons */
@@ -273,6 +288,36 @@ a {
 
 .footer a {
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: auto;
+    padding-top: 20px;
+  }
+
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header__menu-item {
+    padding: 10px 0;
+  }
+
+  .footer {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Other */
+.infographics {
+  width: 100%;
 }
 
 .svg__shift-dash {
