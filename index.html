@@ -1,5 +1,6 @@
 <html>
   <title>Link-Site Prototype</title>
+  <link rel="icon" type="image/svg" href='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHJ4PSI2IiBmaWxsPSIjQ0MwMDAwIi8+PHBhdGggZD0iTTI0LjM2MDggMjJDMjUuNDY1IDIxLjc4MjcgMjYuNDQ2NCAyMS4xNzU2IDI3LjExNDcgMjAuMjk2NkMyNy43ODI5IDE5LjQxNzUgMjguMDkwMiAxOC4zMjkyIDI3Ljk3NyAxNy4yNDI5QzI3Ljg2MzggMTYuMTU2NiAyNy4zMzggMTUuMTQ5OCAyNi41MDE5IDE0LjQxOEMyNS42NjU4IDEzLjY4NjIgMjQuNTc4OSAxMy4yODE2IDIzLjQ1MjIgMTMuMjgyNkgyMi4zMDczQzIyLjAwNjMgMTIuMTUzMiAyMS40MjA1IDExLjExMzkgMjAuNjAyNiAxMC4yNThDMTkuNzg0NyA5LjQwMjA5IDE4Ljc2MDMgOC43NTY0MyAxNy42MjEzIDguMzc4OTdDMTYuNDgyMyA4LjAwMTUxIDE1LjI2NDQgNy45MDQwNyAxNC4wNzY5IDguMDk1MzlDMTIuODg5NSA4LjI4NjcxIDExLjc2OTcgOC43NjA4IDEwLjgxOCA5LjQ3NTExQzkuODY2MjkgMTAuMTg5NCA5LjExMjU2IDExLjEyMTYgOC42MjQ0NCAxMi4xODc5QzguMTM2MzMgMTMuMjU0MiA3LjkyOTExIDE0LjQyMTMgOC4wMjEzOSAxNS41ODQ0QzguMTEzNjggMTYuNzQ3NSA4LjUwMjU4IDE3Ljg3MDEgOS4xNTMxNyAxOC44NTE2QzkuODAzNzcgMTkuODMzMSAxMC42OTU3IDIwLjY0MjYgMTEuNzQ4OSAyMS4yMDc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xOSAxN0wxNSAyMi41SDIxTDE3IDI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='>
 
   <div class="wrapper">
     <header class="header">
@@ -9,9 +10,9 @@
           Link-Site Proto
         </a>
         <nav class="header__menu">
-          <a class="header__menu-item" href="#">Home</a>
-          <a class="header__menu-item" href="#creation">Create Link-Site</a>
-          <a class="header__menu-item" href="#best-practices">Best Practices</a>
+          <a class="header__menu-item link-site__link" href="#main">Home</a>
+          <a class="header__menu-item link-site__link" href="#creation">Create Link-Site</a>
+          <a class="header__menu-item link-site__link" href="#best-practices">Best Practices</a>
         </nav>
       </div>
     </header>
@@ -26,7 +27,15 @@
 
       <div class="page page--subpage" id="best-practices">
         <h1>Best Practices</h1>
-        <p>This is good references</p>
+        <p>Keep it simple and self contained. Less is more.</p>
+
+        <ul>
+          <li>Avoid external dependencies</li>
+          <li>Use SVG for images when possible and reasonable</li>
+          <li>Avoid including videos, it's an overkill. Consider using <a href="https://webtorrent.io/" target="_blank">WebTorrent</a>.</li>
+          <li>Specify last modification date</li>
+          <li>Specify Web URL where user can find latest version</li>
+        </ul>
       </div>
 
 
@@ -53,26 +62,61 @@
             <ul>
               <li>Make links heavy and put extra load on a linking page</li>
               <li>Can't be updated after the link is copied</li>
-              <li>Has <a href="https://stackoverflow.com/questions/695151/data-protocol-url-size-limitations" target="_blank">size limitation</a> based on Url Schema max-size of browser</li>
+              <li>Has <a href="https://stackoverflow.com/questions/695151/data-protocol-url-size-limitations" target="_blank">size limitation</a> based on Url Schema max-size of a browser</li>
               <li>Modern browsers <a href="https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/" target="_blank">block data:urls</a>, need to copy the link or use bookmark</li>
               <li>Can't be taken away for a user ;-)</li>
             </ul>
           </div>
         </div>
 
-        <h2>Use cases</h2>
-        <ul>
-          <li>Bypass oppresive government blocks</li>
-          <li>Survive server/business death</li>
-          <li>Avoid server costs</li>
-        </ul>
+        <div class="grid">
+          <div class="grid__col" style="--cols: 6">
+            <h2>Use cases</h2>
+            <ul>
+              <li>Bypass oppresive government blocks</li>
+              <li>Survive server/business death</li>
+              <li>Avoid server costs</li>
+            </ul>
+          </div>
+
+          <div class="grid__col" style="--cols: 6">
+            <svg width="382" height="303" viewBox="0 0 382 303" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M206 42V38C206 35.8783 205.157 33.8434 203.657 32.3431C202.157 30.8429 200.122 30 198 30H182C179.878 30 177.843 30.8429 176.343 32.3431C174.843 33.8434 174 35.8783 174 38V42" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M190 22C194.418 22 198 18.4183 198 14C198 9.58172 194.418 6 190 6C185.582 6 182 9.58172 182 14C182 18.4183 185.582 22 190 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M188 153.458C188.859 154.583 189.955 155.513 191.213 156.186C192.471 156.859 193.863 157.26 195.293 157.36C196.724 157.46 198.159 157.258 199.503 156.768C200.846 156.277 202.066 155.509 203.08 154.516L209.08 148.641C210.902 146.794 211.91 144.321 211.887 141.753C211.864 139.186 210.812 136.73 208.958 134.915C207.104 133.099 204.596 132.07 201.974 132.047C199.352 132.025 196.826 133.012 194.94 134.796L191.5 138.144" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M196 149.542C195.141 148.417 194.045 147.487 192.787 146.814C191.528 146.141 190.137 145.74 188.707 145.64C187.276 145.54 185.841 145.742 184.497 146.233C183.154 146.723 181.934 147.491 180.92 148.484L174.92 154.359C173.098 156.206 172.09 158.679 172.113 161.247C172.136 163.814 173.188 166.27 175.042 168.085C176.896 169.901 179.404 170.931 182.026 170.953C184.648 170.975 187.174 169.988 189.06 168.205L192.48 164.856" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <g clip-path="url(#clip0_27_4721)">
+              <path d="M56.3333 291L68.0833 279L56.3333 267" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M40.6667 267L28.9167 279L40.6667 291" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <path d="M206 261H178C175.791 261 174 262.791 174 265V293C174 295.209 175.791 297 178 297H206C208.209 297 210 295.209 210 293V265C210 262.791 208.209 261 206 261Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M185 275C186.657 275 188 273.657 188 272C188 270.343 186.657 269 185 269C183.343 269 182 270.343 182 272C182 273.657 183.343 275 185 275Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M210 285L200 275L178 297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M339.417 259H323.75C322.711 259 321.715 259.421 320.98 260.172C320.246 260.922 319.833 261.939 319.833 263V295C319.833 296.061 320.246 297.078 320.98 297.828C321.715 298.579 322.711 299 323.75 299H347.25C348.289 299 349.285 298.579 350.019 297.828C350.754 297.078 351.167 296.061 351.167 295V271L339.417 259Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M339.417 259V271H351.167" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M343.333 281H327.667" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M343.333 289H327.667" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M331.583 273H329.625H327.667" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="svg__shift-dash" d="M49.5 252.615L49.5 157.5C49.5 154.739 51.7386 152.5 54.5 152.5L149 152.5" stroke="black" stroke-width="3" stroke-dasharray="5 5"/>
+              <path class="svg__shift-dash" d="M332.5 252.615L332.5 157.5C332.5 154.739 330.261 152.5 327.5 152.5L229 152.5" stroke="black" stroke-width="3" stroke-dasharray="5 5"/>
+              <line class="svg__shift-dash" x1="190.5" y1="250" x2="190.5" y2="182" stroke="black" stroke-width="3" stroke-dasharray="5 5"/>
+              <line class="svg__shift-dash" x1="190.5" y1="122" x2="190.5" y2="54" stroke="black" stroke-width="3" stroke-dasharray="5 5"/>
+              <defs>
+              <clipPath id="clip0_27_4721">
+              <rect width="47" height="48" fill="white" transform="translate(25 255)"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer__container container">
         <div class="footer__copyright">
-          Made by <a href="https://alexchernov.com">Alex Chernov</a> in 2022. Free for use and modification.
+          Made by <a href="https://alexchernov.com">Alex Chernov</a> in 2022. Free for use and modification.<br>
+          Get <a href="https://alexuslab.com/link-site/" target="_blank">latest version</a> of this page.
         </div>
         <div class="footer__version">5 Apr 2022, 1pm GMT+10</div>
       </div>
@@ -123,8 +167,8 @@ a {
 }
 
 /* Paging system */
-.page--subpage:target ~ .page--main,
-.page--subpage:not(:target) {
+.page--subpage.page--active ~ .page--main,
+.page--subpage:not(.page--active) {
   display: none;
 }
 
@@ -230,24 +274,56 @@ a {
 .footer a {
   color: white;
 }
+
+.svg__shift-dash {
+  stroke-dashoffset: 10;
+  animation-name: dashanim;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dashanim {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+
 </style>
 <script>
 (function() {
-  // Process links to self
-  const links = Array.from(document.querySelectorAll('.link-site__link'));
-  if(links.length === 0) return;
   const sourceCode = document.documentElement.outerHTML;
   const base64 = btoa(sourceCode);
   const url = `data:text/html;base64,${base64}`;
 
+  // Process links to self
+  const links = Array.from(document.querySelectorAll('.link-site__link'));
+  if(links.length === 0) return;
+
+  const pages = Array.from(document.querySelectorAll('.page'));
+  if(document.location.hash !== '') {
+    activateTargetPage(document.location.hash.replace('#', ''));
+  }
+
   links.forEach(l => {
-    l.href = url;
-    l.addEventListener('click', e => {
-      if(l.classList.contains('link-site__link--default')) return;
-      e.preventDefault();
-      alert("This is a link-site url. Please copy the link and paste it into your address bar.\n\nOpenning of data-url links direclty is blocked in all modern browsers for security reasons.");
-    });
+    const target = l.getAttribute('href');
+    if(target === '#') {
+      l.href = url;
+      l.addEventListener('click', e => {
+        if(l.classList.contains('link-site__link--default')) return;
+        e.preventDefault();
+        alert("This is a link-site url. Please copy the link and paste it into your address bar.\n\nOpenning of data-url links direclty is blocked in all modern browsers for security reasons.");
+      });
+    } else {
+      // Google Chrome don't support #hash for data links **facepalm**
+      l.addEventListener('click', () => {
+        activateTargetPage(target.replace('#', ''));
+      });
+    }
   });
+
+  function activateTargetPage(targetId) {
+    const targetPage = document.getElementById(targetId);
+    pages.forEach(p => p.classList.toggle('page--active', p === targetPage));
+  }
 })();
 </script>
 </html>
