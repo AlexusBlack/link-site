@@ -10,34 +10,71 @@
         </a>
         <nav class="header__menu">
           <a class="header__menu-item" href="#">Home</a>
-          <a class="header__menu-item" href="#references">References</a>
-          <a class="header__menu-item" href="#contacts">Contacts</a>
+          <a class="header__menu-item" href="#creation">Create Link-Site</a>
+          <a class="header__menu-item" href="#best-practices">Best Practices</a>
         </nav>
       </div>
     </header>
 
     <main class="page-content container">
 
-      <div class="page page--subpage" id="references">
-        <h1>References</h1>
+      <div class="page page--subpage" id="creation">
+        <h1>Create Link-Site</h1>
+        <p>Just download this link-site and modify it for your needs. It already includes link generation, page system and grid system.</p>
+        <a href="#" class="btn link-site__link link-site__link--default" download="link-site.html">Download</a>
+      </div>
+
+      <div class="page page--subpage" id="best-practices">
+        <h1>Best Practices</h1>
         <p>This is good references</p>
       </div>
 
-      <div class="page page--subpage" id="contacts">
-        <h1>Contacts</h1>
-        <p>This is good references</p>
-      </div>
 
       <div class="page page--main">
         <h1>What is a Link-Site?</h1>
         <p>Link-Site is a website/webapp that lives entirely in a link, don't need any server, loads instantly and can't be blocked.</p>
-        Copy/Bookmark <a href="#" class="link-site__link">link to this link-site</a> to access it anytime and anywhere.
+        Copy or Bookmark <a href="#" class="link-site__link">link to this link-site</a> to access the website anytime and anywhere.
+
+        <div class="grid">
+          <div class="grid__col" style="--cols: 6">
+            <h2>Advantages</h2>
+            <ul>
+              <li>Don't need a server</li>
+              <li>Loads instantly</li>
+              <li>Offline access</li>
+              <li>Can't be blocked</li>
+              <li>Can't be taken away for a user</li>
+              <li>Users can't be tracked</li>
+            </ul>
+          </div>
+
+          <div class="grid__col" style="--cols: 6">
+            <h2>Disadvantages</h2>
+            <ul>
+              <li>Make links heavy and put extra load on a linking page</li>
+              <li>Can't be updated after the link is copied</li>
+              <li>Has <a href="https://stackoverflow.com/questions/695151/data-protocol-url-size-limitations" target="_blank">size limitation</a> based on Url Schema max-size of browser</li>
+              <li>Modern browsers <a href="https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/" target="_blank">block data:urls</a>, need to copy the link or use bookmark</li>
+              <li>Can't be taken away for a user ;-)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Use cases</h2>
+        <ul>
+          <li>Bypass oppresive government blocks</li>
+          <li>Survive server/business death</li>
+          <li>Avoid server costs</li>
+        </ul>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        Made by <a href="https://alexchernov.com">Alex Chernov</a> in 2022. Free for use and modification.
+      <div class="footer__container container">
+        <div class="footer__copyright">
+          Made by <a href="https://alexchernov.com">Alex Chernov</a> in 2022. Free for use and modification.
+        </div>
+        <div class="footer__version">5 Apr 2022, 1pm GMT+10</div>
       </div>
     </footer>
   </div>
@@ -56,8 +93,12 @@ html, body {
 
   --color-primary-red: #cc0000;
 
-  box-sizing: border-box;
+  color: #111;
   font-family: sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 a {
@@ -85,6 +126,40 @@ a {
 .page--subpage:target ~ .page--main,
 .page--subpage:not(:target) {
   display: none;
+}
+
+/* Grid system */
+.grid {
+  display: grid;
+  --grid-size: 12;
+  --grid-column-gap: 24px;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  grid-column-gap: var(--grid-column-gap);
+}
+
+.grid__col {
+  --cols: 1;
+  grid-column-end: span var(--cols);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 49px;
+  background-color: var(--color-primary-red);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary-red);
+}
+
+.btn:hover {
+  color: initial;
+  background-color: transparent;
 }
 
 /* Header & Footer */
@@ -132,7 +207,7 @@ a {
 }
 
 .header__menu-item:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 35px;
 }
 
 .header__menu-item:hover {
@@ -145,6 +220,11 @@ a {
   height: 100px;
   box-shadow: 0 -3px 5px rgba(0,0,0, 0.3);
   font-size: 11px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer a {
@@ -163,6 +243,7 @@ a {
   links.forEach(l => {
     l.href = url;
     l.addEventListener('click', e => {
+      if(l.classList.contains('link-site__link--default')) return;
       e.preventDefault();
       alert("This is a link-site url. Please copy the link and paste it into your address bar.\n\nOpenning of data-url links direclty is blocked in all modern browsers for security reasons.");
     });
