@@ -1,0 +1,172 @@
+<html>
+  <title>Link-Site Prototype</title>
+
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo link-site__link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cloud-lightning"><path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path><polyline points="13 11 9 17 15 17 11 23"></polyline></svg>
+          Link-Site Proto
+        </a>
+        <nav class="header__menu">
+          <a class="header__menu-item" href="#">Home</a>
+          <a class="header__menu-item" href="#references">References</a>
+          <a class="header__menu-item" href="#contacts">Contacts</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content container">
+
+      <div class="page page--subpage" id="references">
+        <h1>References</h1>
+        <p>This is good references</p>
+      </div>
+
+      <div class="page page--subpage" id="contacts">
+        <h1>Contacts</h1>
+        <p>This is good references</p>
+      </div>
+
+      <div class="page page--main">
+        <h1>What is a Link-Site?</h1>
+        <p>Link-Site is a website/webapp that lives entirely in a link, don't need any server, loads instantly and can't be blocked.</p>
+        Copy/Bookmark <a href="#" class="link-site__link">link to this link-site</a> to access it anytime and anywhere.
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        Made by <a href="https://alexchernov.com">Alex Chernov</a> in 2022. Free for use and modification.
+      </div>
+    </footer>
+  </div>
+   
+<style>
+/* General and Layout */
+html, body {
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+:root {
+  --content-max-width: 1280px;
+  --padding-width: 160px;
+
+  --color-primary-red: #cc0000;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--color-primary-red);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  max-width: var(--content-max-width);
+  width: calc(100% - var(--padding-width) * 2);
+  margin: 0 auto;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 30px 0;
+}
+
+/* Paging system */
+.page--subpage:target ~ .page--main,
+.page--subpage:not(:target) {
+  display: none;
+}
+
+/* Header & Footer */
+.header,
+.footer {
+  background-color: var(--color-primary-red);
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  box-shadow: 0 3px 5px rgba(0,0,0, 0.3);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.header__logo svg {
+  width: 48px; height: 48px;
+  margin-right: 20px;
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__menu-item {
+  color: white;
+  text-decoration: none;
+}
+
+.header__menu-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header__menu-item:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  box-shadow: 0 -3px 5px rgba(0,0,0, 0.3);
+  font-size: 11px;
+}
+
+.footer a {
+  color: white;
+}
+</style>
+<script>
+(function() {
+  // Process links to self
+  const links = Array.from(document.querySelectorAll('.link-site__link'));
+  if(links.length === 0) return;
+  const sourceCode = document.documentElement.outerHTML;
+  const base64 = btoa(sourceCode);
+  const url = `data:text/html;base64,${base64}`;
+
+  links.forEach(l => {
+    l.href = url;
+    l.addEventListener('click', e => {
+      e.preventDefault();
+      alert("This is a link-site url. Please copy the link and paste it into your address bar.\n\nOpenning of data-url links direclty is blocked in all modern browsers for security reasons.");
+    });
+  });
+})();
+</script>
+</html>
